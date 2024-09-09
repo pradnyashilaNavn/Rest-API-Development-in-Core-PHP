@@ -54,6 +54,12 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                 "message" => "Failed to insert data"
             ));
         }
+    }else{
+        http_response_code(400); //Page not found
+        echo json_encode(array(
+            "status" =>400,
+            "message" => "All values needed"
+        ));
     }
 }else{
     http_response_code(503); //service unavailable
