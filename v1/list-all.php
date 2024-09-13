@@ -1,7 +1,7 @@
 <?php
 //ini_set("display_errors", 200); // to show error 
 header("Access-control-Allow-origin: *");
-header("Access-control-Allow-MethodS: GET");
+header("Access-control-Allow-Methods: GET");
 
 include_once ("../config/database.php");
 include_once ("../classes/student.php");
