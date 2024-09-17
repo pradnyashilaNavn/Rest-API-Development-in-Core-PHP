@@ -71,5 +71,21 @@ class Student{
         }
 
     }
+
+    public function delete_student(){
+        $delete_query = "DELETE FROM ".$this->table_name." WHERE id = ?";
+
+        $delete_obj = $this->conn->prepare($delete_query);
+
+        $this->id = htmlspecialchars(strip_tags($this->id));
+        $delete_obj->bind_param("i", $this->id);
+
+        if($delete_obj->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }
 ?>
