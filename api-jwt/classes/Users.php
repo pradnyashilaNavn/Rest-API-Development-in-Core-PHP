@@ -39,4 +39,15 @@ class Users{
             return array();
     }
 
+    public function check_login(){
+        $login_query = "SELECT * FROM ".$this->users_tbl." WHERE email = ? ";
+        $login_obj = $this->conn->prepare($login_query);
+        $login_obj->bind_param('s', $this->email);
+        if($login_obj->execute()){
+            $login_data = $login_obj->get_result();
+            return $login_data->fetch_assoc();
+        }
+        return array();
+    }
+
 }
