@@ -34,14 +34,14 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
                 http_response_code(404);
                 echo json_encode(array(
                     "status" => 0,
-                    "message" => "Invalid credentials123"
+                    "message" => "Invalid password credentials"
                 ));
             }
         }else{
             http_response_code(404);
             echo json_encode(array(
                 "status" => 0,
-                "message" => "Invalid credentials"
+                "message" => "Invalid email credentials"
             ));
         }
 
